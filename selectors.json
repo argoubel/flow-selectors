@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "selectors": {
+    "PROMPT_INPUT_ID": "PINHOLE_TEXT_AREA_ELEMENT_ID",
+    "SUBMIT_BUTTON": "//button[.//i[text()='arrow_forward']]"
+  },
+  "features": {
+    "autoSubmit": true
+  }
+}
