@@ -5,8 +5,14 @@
     "PROMPT_INPUT_XPATH": "//div[@role='textbox' and @data-slate-editor='true']",
     "SUBMIT_BUTTON": "//button[.//i[contains(@class,'google-symbols') and contains(text(),'arrow_forward')]]",
     "NEW_PROJECT_BTN": "//button[.//i[contains(@class,'google-symbols') and contains(text(),'add_2')]]",
-    "MODE_DROPDOWN": "//button[@aria-haspopup='menu' and .//div[@data-type='button-overlay'] and (contains(.,'Vidéo') or contains(.,'Image'))]",
-    "MODE_CREATE_IMAGE": "//div[@role='menuitem' and contains(.,'Image')] | //button[contains(.,'Image') and not(contains(.,'Create'))]"
+    "MODE_DROPDOWN": "//button[@aria-haspopup='menu' and .//div[@data-type='button-overlay'] and (contains(.,'Vidéo') or contains(.,'Image') or contains(.,'Nano Banana'))]",
+    "MODE_CREATE_IMAGE": "//button[contains(@class,'flow_tab_slider_trigger') and contains(@id,'trigger-IMAGE')] | //button[contains(.,'Image') and not(contains(.,'Create')) and contains(@class,'flow_tab_slider_trigger')] | //div[@role='menuitem' and contains(.,'Image')] | //button[contains(.,'Image') and not(contains(.,'Create'))]",
+    "CROP_LANDSCAPE": "//button[contains(@class,'flow_tab_slider_trigger') and contains(@id,'trigger-LANDSCAPE')] | //button[contains(.,'Paysage')]",
+    "CROP_PORTRAIT": "//button[contains(@class,'flow_tab_slider_trigger') and contains(@id,'trigger-PORTRAIT')] | //button[contains(.,'Portrait')]",
+    "OUTPUT_ONE": "//button[contains(@class,'flow_tab_slider_trigger') and (contains(@id,'trigger-1') or contains(.,'x1'))]",
+    "OUTPUT_TWO": "//button[contains(@class,'flow_tab_slider_trigger') and (contains(@id,'trigger-2') or contains(.,'x2'))]",
+    "OUTPUT_THREE": "//button[contains(@class,'flow_tab_slider_trigger') and (contains(@id,'trigger-3') or contains(.,'x3'))]",
+    "OUTPUT_FOUR": "//button[contains(@class,'flow_tab_slider_trigger') and (contains(@id,'trigger-4') or contains(.,'x4'))]"
   },
   "features": {
     "autoSubmit": true,
