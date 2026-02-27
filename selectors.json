@@ -4,7 +4,9 @@
     "PROMPT_INPUT_SELECTOR": "div[role=\"textbox\"][data-slate-editor=\"true\"]",
     "PROMPT_INPUT_XPATH": "//div[@role='textbox' and @data-slate-editor='true']",
     "SUBMIT_BUTTON": "//button[.//i[contains(@class,'google-symbols') and contains(text(),'arrow_forward')]]",
-    "NEW_PROJECT_BTN": "//button[.//i[contains(@class,'google-symbols') and contains(text(),'add_2')]]"
+    "NEW_PROJECT_BTN": "//button[.//i[contains(@class,'google-symbols') and contains(text(),'add_2')]]",
+    "MODE_DROPDOWN": "//button[@aria-haspopup='menu' and .//div[@data-type='button-overlay'] and (contains(.,'Vidéo') or contains(.,'Image'))]",
+    "MODE_CREATE_IMAGE": "//div[@role='menuitem' and contains(.,'Image')] | //button[contains(.,'Image') and not(contains(.,'Create'))]"
   },
   "features": {
     "autoSubmit": true,
