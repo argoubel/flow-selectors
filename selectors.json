@@ -1,10 +1,13 @@
 {
-  "version": 1,
+  "version": 2,
   "selectors": {
-    "PROMPT_INPUT_ID": "PINHOLE_TEXT_AREA_ELEMENT_ID",
-    "SUBMIT_BUTTON": "//button[.//i[text()='arrow_forward']]"
+    "PROMPT_INPUT_SELECTOR": "div[role=\"textbox\"][data-slate-editor=\"true\"]",
+    "PROMPT_INPUT_XPATH": "//div[@role='textbox' and @data-slate-editor='true']",
+    "SUBMIT_BUTTON": "//button[.//i[contains(@class,'google-symbols') and contains(text(),'arrow_forward')]]",
+    "NEW_PROJECT_BTN": "//button[.//i[contains(@class,'google-symbols') and contains(text(),'add_2')]]"
   },
   "features": {
-    "autoSubmit": true
+    "autoSubmit": true,
+    "slateEditor": true
   }
 }
