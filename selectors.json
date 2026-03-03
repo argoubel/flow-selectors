@@ -1,21 +1,34 @@
 {
-  "version": 2,
+  "version": 3,
   "selectors": {
-    "PROMPT_INPUT_SELECTOR": "div[role=\"textbox\"][data-slate-editor=\"true\"]",
-    "PROMPT_INPUT_XPATH": "//div[@role='textbox' and @data-slate-editor='true']",
-    "SUBMIT_BUTTON": "//button[.//i[contains(@class,'google-symbols') and contains(text(),'arrow_forward')]]",
-    "NEW_PROJECT_BTN": "//button[.//i[contains(@class,'google-symbols') and contains(text(),'add_2')]]",
-    "MODE_DROPDOWN": "//button[@aria-haspopup='menu' and .//div[@data-type='button-overlay'] and (contains(.,'Vidéo') or contains(.,'Image') or contains(.,'Nano Banana'))]",
-    "MODE_CREATE_IMAGE": "//button[contains(@class,'flow_tab_slider_trigger') and contains(@id,'trigger-IMAGE')] | //button[contains(.,'Image') and not(contains(.,'Create')) and contains(@class,'flow_tab_slider_trigger')] | //div[@role='menuitem' and contains(.,'Image')] | //button[contains(.,'Image') and not(contains(.,'Create'))]",
-    "CROP_LANDSCAPE": "//button[contains(@class,'flow_tab_slider_trigger') and contains(@id,'trigger-LANDSCAPE')] | //button[contains(.,'Paysage')]",
-    "CROP_PORTRAIT": "//button[contains(@class,'flow_tab_slider_trigger') and contains(@id,'trigger-PORTRAIT')] | //button[contains(.,'Portrait')]",
-    "OUTPUT_ONE": "//button[contains(@class,'flow_tab_slider_trigger') and (contains(@id,'trigger-1') or contains(.,'x1'))]",
-    "OUTPUT_TWO": "//button[contains(@class,'flow_tab_slider_trigger') and (contains(@id,'trigger-2') or contains(.,'x2'))]",
-    "OUTPUT_THREE": "//button[contains(@class,'flow_tab_slider_trigger') and (contains(@id,'trigger-3') or contains(.,'x3'))]",
-    "OUTPUT_FOUR": "//button[contains(@class,'flow_tab_slider_trigger') and (contains(@id,'trigger-4') or contains(.,'x4'))]"
+    "PROMPT_INPUT_SELECTOR": "[role=\"textbox\"][contenteditable=\"true\"], textarea, [contenteditable=\"true\"]",
+    "PROMPT_INPUT_XPATH": "//*[@role='textbox' and (@contenteditable='true' or @data-slate-editor='true')] | //textarea | //*[@contenteditable='true']",
+
+    "NEW_PROJECT_BTN": "//button[.//*[self::i or self::span][contains(.,'add') or contains(.,'add_2')]] | //button[contains(.,'+') and contains(.,'Projet')] | //button[contains(.,'New') and contains(.,'project')]",
+
+    "SUBMIT_BUTTON": "//button[.//*[self::svg or self::i][contains(.,'arrow') or contains(.,'arrow_forward')]] | //button[contains(@aria-label,'Generate') or contains(@aria-label,'Générer')]",
+
+    "MODE_CREATE_IMAGE": "//*[@role='tab' and (contains(normalize-space(.),'Image') or contains(@id,'trigger-IMAG'))] | //*[@role='menuitem' and contains(.,'Image')] | //button[contains(@id,'trigger-IMAG')] | //button[contains(normalize-space(.),'Image')]",
+    "MODE_CREATE_VIDEO": "//*[@role='tab' and (contains(normalize-space(.),'Video') or contains(normalize-space(.),'Vidéo') or contains(@id,'trigger-VIDE'))] | //*[@role='menuitem' and (contains(.,'Video') or contains(.,'Vidéo'))] | //button[contains(@id,'trigger-VIDE')] | //button[contains(normalize-space(.),'Video') or contains(normalize-space(.),'Vidéo')]",
+
+    "CROP_LANDSCAPE": "//*[@role='tab' and (contains(normalize-space(.),'Paysage') or contains(@id,'trigger-LANDSCAPE'))] | //button[contains(@id,'trigger-LANDSCAPE')] | //button[contains(normalize-space(.),'Paysage')]",
+    "CROP_PORTRAIT": "//*[@role='tab' and (contains(normalize-space(.),'Portrait') or contains(@id,'trigger-PORTRAIT'))] | //button[contains(@id,'trigger-PORTRAIT')] | //button[contains(normalize-space(.),'Portrait')]",
+
+    "OUTPUT_ONE": "//*[@role='tab' and normalize-space(.)='x1'] | //button[contains(@id,'trigger-1')] | //button[normalize-space(.)='x1']",
+    "OUTPUT_TWO": "//*[@role='tab' and normalize-space(.)='x2'] | //button[contains(@id,'trigger-2')] | //button[normalize-space(.)='x2']",
+    "OUTPUT_THREE": "//*[@role='tab' and normalize-space(.)='x3'] | //button[contains(@id,'trigger-3')] | //button[normalize-space(.)='x3']",
+    "OUTPUT_FOUR": "//*[@role='tab' and normalize-space(.)='x4'] | //button[contains(@id,'trigger-4')] | //button[normalize-space(.)='x4']",
+
+    "MODEL_BUTTON": "//button[contains(.,'Nano Banana')] | //button[@aria-haspopup='menu' and (contains(.,'Nano') or contains(.,'Banana'))]",
+    "MODEL_OPTION_NANO_BANANA_2": "//*[@role='option' and contains(.,'Nano Banana 2')] | //*[@role='menuitem' and contains(.,'Nano Banana 2')] | //button[contains(.,'Nano Banana 2')] | //li[contains(.,'Nano Banana 2')]",
+    "MODEL_OPTION_NANO_BANANA_PRO": "//*[@role='option' and contains(.,'Nano Banana Pro')] | //*[@role='menuitem' and contains(.,'Nano Banana Pro')] | //button[contains(.,'Nano Banana Pro')] | //li[contains(.,'Nano Banana Pro')]",
+
+    "ACTIVE_TAB_SELECTOR": "[role=\"tab\"][data-state=\"active\"], [role=\"tab\"][aria-selected=\"true\"]"
   },
   "features": {
     "autoSubmit": true,
-    "slateEditor": true
+    "slateEditor": true,
+    "radixTabs": true,
+    "remoteSelectors": true
   }
 }
